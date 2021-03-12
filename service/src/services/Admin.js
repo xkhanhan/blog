@@ -1,9 +1,6 @@
 const Admin = require('../mysql/model/Admin');// 导入模型
 const Admin_info = require('../mysql/model/Admin_info');
 
-const validate = require('validate.js'); // 导入验证方法
-const rules = require('rules');
-
 
 // 导出接口
 module.exports = {
@@ -54,7 +51,7 @@ module.exports = {
 
         const rule = { Admin_pass: rules.Admin.Admin_pass };
 
-        await validate.async({ Admin_pass }, rule); // 经行数据验证
+     
 
         ins.Admin_pass = Admin_pass; // 修改密码
         await ins.save(); // 提交信息
