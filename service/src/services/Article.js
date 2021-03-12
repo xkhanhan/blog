@@ -83,6 +83,7 @@ module.exports = { // 导出文章服务层方法
     async getPage(from = 0, number = 5, createdAt = {}, name = {}) {
         from = parseInt(from);
         number = parseInt(number);
+        console.log(from, number);
         const {count, rows} = await Article.findAndCountAll({
             where : createdAt,
             offset: from,

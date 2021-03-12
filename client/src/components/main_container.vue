@@ -122,7 +122,6 @@ export default {
   },
   watch: {
     option() {
-      console.log();
       this.responseData(0, 5, this.option.createdAt, this.option.name);
     },
   },

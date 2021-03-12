@@ -3,7 +3,7 @@
     <sider-container slot="sider" />
     <div slot="main" >
       <!-- 文章展示主页 -->
-          <markdown-it-vue :style="{background : '#fff', padding : '20px'}" class="md-body" :content="content" />
+          <markdown-it-vue :style="{hegiht : '500px',background : '#fff', padding : '20px'}" class="md-body" :content="content" />
     </div>
   </my-container>
 </template>
@@ -23,12 +23,12 @@ export default {
     siderContainer
   },
   async created(){
-      console.log(this.$route);
      this.content = await api.Article.get_detailed(this.$route.params.id);
+     console.log(this.content);
   },
   data() {
     return {
-      content: '# your markdown content'
+      content: ''
     }
   }
 }

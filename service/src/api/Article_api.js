@@ -16,10 +16,10 @@ Article_router.get('/', async (req, res) => {
     let createdAt = req.query.createdAt ? {createdAt : req.query.createdAt} : undefined
     let name = req.query.name ? {name : req.query.name} : undefined;
   
-
+    console.log(createdAt, name);
     const data = await Article_services.getPage(from, num, createdAt, name)|| data;
+    console.log(data);
     res.send({code : true, message : "查询成功!", result : data });
-
 })
 
 Article_router.get('/fox', async (req, res) => {
@@ -49,7 +49,7 @@ Article_router.get('/detailed', async (req, res) => {
 })
 
 Article_router.post('/add', async (req, res) =>{
-    
+    console.log(req.query);
 })
 
 module.exports = Article_router;

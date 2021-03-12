@@ -19,9 +19,6 @@ export default {
     siderContainer,
     myContainer,
   },
-  created() {
-    
-  },
   data() {
     return {
       // 文章数组
